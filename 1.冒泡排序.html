@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.冒泡排序</title>
+</head>
+
+<body>
+    打开控制台
+    <script>
+        function bubbleSort(myArray) {
+            var len = myArray.length;
+            var i;
+            var j;
+            var stop;
+
+            for (i = 0; i < len - 1; i++) {
+                for (j = 0, stop = len - 1 - i; j < stop; j++) {
+                    if (myArray[j] > myArray[j + 1]) {
+                        swap(myArray, j, j + 1);
+                    }
+                }
+            }
+            return myArray;
+        }
+
+        //交换数组两个元素
+        function swap(myArray, p1, p2) {
+            var temp = myArray[p1];
+            myArray[p1] = myArray[p2];
+            myArray[p2] = temp;
+        }
+
+        //测试一下
+        var dataStore = [1, 8, 3, 2, 9, 5, 4, 7];
+        console.log(bubbleSort(dataStore));
+    </script>
+</body>
+
+</html>
